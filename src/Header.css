@@ -1,0 +1,81 @@
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* auto-height instead of fixed height */
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px; /* smaller top-bottom + left-right */
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-logo {
+  height: clamp(32px, 4vw, 48px); /* reduced from 40–64px */
+  width: auto;
+}
+
+.company-name {
+  font-size: 18px; /* was 24px or 20px */
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+
+.header-site-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-style: italic;
+  color: white;
+  text-transform: capitalize;
+  margin-right: 80px; /* ✅ Add right margin to avoid edge */
+}
+
+/* Logout button */
+.logout-button {
+  padding: 4px 10px;
+  font-size: 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px; /* ✅ Gives slight gap between logout & text */
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (max-width: 600px) {
+  .fixed-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-site-info {
+    margin-top: 8px;
+  }
+}
+.company-name {
+  font-size: 20px;
+}
